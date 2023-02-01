@@ -16,6 +16,7 @@
 		081E6F26298A829300D1B8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081E6F24298A829300D1B8A9 /* Assets.xcassets */; };
 		081E6F28298A945600D1B8A9 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F27298A945600D1B8A9 /* Landmarks.swift */; };
 		081E6F2A298A962700D1B8A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F29298A962700D1B8A9 /* Service.swift */; };
+		081E6F2C298ABDCF00D1B8A9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		081E6F24298A829300D1B8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets_iOS2/Assets.xcassets; sourceTree = "<group>"; };
 		081E6F27298A945600D1B8A9 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
 		081E6F29298A962700D1B8A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				081E6F23298A829300D1B8A9 /* landmarkData.json */,
 				081E6F27298A945600D1B8A9 /* Landmarks.swift */,
 				081E6F29298A962700D1B8A9 /* Service.swift */,
+				081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */,
 			);
 			path = LandmarksList;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				081E6F14298A827600D1B8A9 /* ViewController.swift in Sources */,
 				081E6F10298A827600D1B8A9 /* AppDelegate.swift in Sources */,
+				081E6F2C298ABDCF00D1B8A9 /* CollectionViewCell.swift in Sources */,
 				081E6F2A298A962700D1B8A9 /* Service.swift in Sources */,
 				081E6F12298A827600D1B8A9 /* SceneDelegate.swift in Sources */,
 				081E6F28298A945600D1B8A9 /* Landmarks.swift in Sources */,

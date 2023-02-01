@@ -17,7 +17,7 @@ struct Landmark: Decodable, Hashable {
     
     enum Category: String, CaseIterable, Decodable {
         case lakes = "Lakes"
-        case mountainss = "Mountains"
+        case mountains = "Mountains"
         case rivers = "Rivers"
     }
     
