@@ -37,8 +37,7 @@ class ViewController: UICollectionViewController {
             }
         })
         
-        let snapshot = createSnapshot()
-        dataSource.apply(snapshot)
+        createSnapshot()
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -51,34 +50,34 @@ class ViewController: UICollectionViewController {
             
             switch section {
             case .category(.lakes):
-                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let dimension = NSCollectionLayoutDimension.absolute(70)
                 let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: dimension)
+                                                      heightDimension: .fractionalHeight(0.3))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .absolute(44))
+                                                       heightDimension: .fractionalHeight(0.3))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                                subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             case .category(.mountains):
-                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let dimension = NSCollectionLayoutDimension.absolute(70)
                 let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: dimension)
+                                                      heightDimension: .fractionalHeight(0.3))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .absolute(44))
+                                                       heightDimension: .fractionalHeight(0.3))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                                subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             case .category(.rivers):
-                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let dimension = NSCollectionLayoutDimension.absolute(70)
                 let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: dimension)
+                                                      heightDimension: .fractionalHeight(0.3))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .absolute(44))
+                                                       heightDimension: .fractionalHeight(0.3))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                                subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
@@ -89,7 +88,7 @@ class ViewController: UICollectionViewController {
         return layout
     }
     
-    private func createSnapshot() -> NSDiffableDataSourceSnapshot<Section, Item> {
+    private func createSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         Landmark.Category.allCases.forEach { category in
             snapshot.appendSections([.category(category)])
@@ -105,7 +104,7 @@ class ViewController: UICollectionViewController {
             }
             snapshot.appendItems(items)
         }
-        return snapshot
+        dataSource.apply(snapshot)
     }
     
     
