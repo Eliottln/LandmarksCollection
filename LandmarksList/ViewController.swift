@@ -49,38 +49,17 @@ class ViewController: UICollectionViewController {
             }
             
             switch section {
-            case .category(.lakes):
-                let dimension = NSCollectionLayoutDimension.absolute(70)
-                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: .fractionalHeight(0.3))
+            case .category:
+                let dimension = NSCollectionLayoutDimension.absolute(130)
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .fractionalHeight(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: dimension,
+                                                       heightDimension: .fractionalHeight(0.2))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                                subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-                return section
-            case .category(.mountains):
-                let dimension = NSCollectionLayoutDimension.absolute(70)
-                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: .fractionalHeight(0.3))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .fractionalHeight(0.3))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                               subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                return section
-            case .category(.rivers):
-                let dimension = NSCollectionLayoutDimension.absolute(70)
-                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
-                                                      heightDimension: .fractionalHeight(0.3))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: .fractionalHeight(0.3))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                               subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
                 return section
             }
         }
