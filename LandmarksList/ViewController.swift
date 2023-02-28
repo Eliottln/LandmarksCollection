@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UICollectionViewController {
-
+    
     enum Section: Hashable {
         case category(Landmark.Category)
     }
@@ -41,6 +41,54 @@ class ViewController: UICollectionViewController {
         dataSource.apply(snapshot)
     }
     
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        
+        let layout = UICollectionViewCompositionalLayout { [weak self] (sectionIndex,_) -> NSCollectionLayoutSection? in
+            guard let self = self,
+                  let section = self.dataSource.sectionIdentifier(for: sectionIndex) else {
+                return nil
+            }
+            
+            switch section {
+            case .category(.lakes):
+                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
+                                                      heightDimension: dimension)
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                       heightDimension: .absolute(44))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                               subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            case .category(.mountains):
+                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
+                                                      heightDimension: dimension)
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                       heightDimension: .absolute(44))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                               subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            case .category(.rivers):
+                let dimension = NSCollectionLayoutDimension.absolute(44)
+                let itemSize = NSCollectionLayoutSize(widthDimension: dimension,
+                                                      heightDimension: dimension)
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                       heightDimension: .absolute(44))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                               subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            }
+        }
+        
+        return layout
+    }
+    
     private func createSnapshot() -> NSDiffableDataSourceSnapshot<Section, Item> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         Landmark.Category.allCases.forEach { category in
@@ -57,44 +105,9 @@ class ViewController: UICollectionViewController {
             }
             snapshot.appendItems(items)
         }
+        return snapshot
     }
     
-    private func createLayout() -> UICollectionViewCompositionalLayout {
-        
-        let layout = UICollectionViewCompositionalLayout { [weak self] (sectionIndex,_) -> NSCollectionLayoutSection? in
-            guard let self = self,
-                  let section = self.dataSource.sectionIdentifier(for: sectionIndex) else {
-                return nil
-            }
-            
-            switch section {
-            case .category(.lakes):
-                    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
-                                                          heightDimension: .fractionalHeight(0.2))
-                    let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                           heightDimension: .absolute(44))
-                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                                   subitems: [item])
-                    let section = NSCollectionLayoutSection(group: group)
-                    return section
-
-            case .category(.mountains):
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
-                                                      heightDimension: .fractionalHeight(0.5))
-                    let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                           heightDimension: .absolute(44))
-                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                                   subitems: [item])
-                    let section = NSCollectionLayoutSection(group: group)
-                    return section
-            }
-        }
-        
-        return layout
-    }
-
-
+    
 }
 
