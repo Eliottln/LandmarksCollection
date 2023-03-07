@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		081E6F10298A827600D1B8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F0F298A827600D1B8A9 /* AppDelegate.swift */; };
 		081E6F12298A827600D1B8A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F11298A827600D1B8A9 /* SceneDelegate.swift */; };
-		081E6F14298A827600D1B8A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F13298A827600D1B8A9 /* ViewController.swift */; };
+		081E6F14298A827600D1B8A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F13298A827600D1B8A9 /* HomeViewController.swift */; };
 		081E6F17298A827600D1B8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081E6F15298A827600D1B8A9 /* Main.storyboard */; };
 		081E6F1C298A827800D1B8A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081E6F1A298A827800D1B8A9 /* LaunchScreen.storyboard */; };
 		081E6F25298A829300D1B8A9 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 081E6F23298A829300D1B8A9 /* landmarkData.json */; };
@@ -17,13 +17,14 @@
 		081E6F28298A945600D1B8A9 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F27298A945600D1B8A9 /* Landmarks.swift */; };
 		081E6F2A298A962700D1B8A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F29298A962700D1B8A9 /* Service.swift */; };
 		081E6F2C298ABDCF00D1B8A9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */; };
+		08CBE61329AE11F700C7A8E1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CBE61229AE11F700C7A8E1 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		081E6F0C298A827600D1B8A9 /* LandmarksList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandmarksList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		081E6F0F298A827600D1B8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		081E6F11298A827600D1B8A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		081E6F13298A827600D1B8A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		081E6F13298A827600D1B8A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		081E6F16298A827600D1B8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		081E6F1B298A827800D1B8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		081E6F1D298A827800D1B8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		081E6F27298A945600D1B8A9 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
 		081E6F29298A962700D1B8A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		08CBE61229AE11F700C7A8E1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,7 @@
 			children = (
 				081E6F0F298A827600D1B8A9 /* AppDelegate.swift */,
 				081E6F11298A827600D1B8A9 /* SceneDelegate.swift */,
-				081E6F13298A827600D1B8A9 /* ViewController.swift */,
+				081E6F13298A827600D1B8A9 /* HomeViewController.swift */,
 				081E6F15298A827600D1B8A9 /* Main.storyboard */,
 				081E6F1A298A827800D1B8A9 /* LaunchScreen.storyboard */,
 				081E6F1D298A827800D1B8A9 /* Info.plist */,
@@ -75,6 +77,7 @@
 				081E6F27298A945600D1B8A9 /* Landmarks.swift */,
 				081E6F29298A962700D1B8A9 /* Service.swift */,
 				081E6F2B298ABDCF00D1B8A9 /* CollectionViewCell.swift */,
+				08CBE61229AE11F700C7A8E1 /* DetailsViewController.swift */,
 			);
 			path = LandmarksList;
 			sourceTree = "<group>";
@@ -151,10 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081E6F14298A827600D1B8A9 /* ViewController.swift in Sources */,
+				081E6F14298A827600D1B8A9 /* HomeViewController.swift in Sources */,
 				081E6F10298A827600D1B8A9 /* AppDelegate.swift in Sources */,
 				081E6F2C298ABDCF00D1B8A9 /* CollectionViewCell.swift in Sources */,
 				081E6F2A298A962700D1B8A9 /* Service.swift in Sources */,
+				08CBE61329AE11F700C7A8E1 /* DetailsViewController.swift in Sources */,
 				081E6F12298A827600D1B8A9 /* SceneDelegate.swift in Sources */,
 				081E6F28298A945600D1B8A9 /* Landmarks.swift in Sources */,
 			);

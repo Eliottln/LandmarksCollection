@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class HomeViewController: UICollectionViewController {
     
     enum Section: Hashable {
         case category(Landmark.Category)
@@ -86,6 +86,17 @@ class ViewController: UICollectionViewController {
         dataSource.apply(snapshot)
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            if let cell = sender as? UICollectionViewCell,
+               let indexPath = self.collectionView.indexPath(for: cell) {
+                let vc = segue.destination as! DetailsViewController
+                vc.landmark = landmarks[indexPath.row]
+            }
+        }
+    }
     
 }
 
