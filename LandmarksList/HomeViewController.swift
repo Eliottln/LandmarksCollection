@@ -91,9 +91,13 @@ class HomeViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let cell = sender as? UICollectionViewCell,
-               let indexPath = self.collectionView.indexPath(for: cell) {
-                let vc = segue.destination as! DetailsViewController
-                vc.landmark = landmarks[indexPath.row]
+               let indexPath = self.collectionView.indexPath(for: cell),
+               let item = dataSource.itemIdentifier(for: indexPath) {
+                switch item {
+                case .landmark(let landmark):
+                    let vc = segue.destination as! DetailsViewController
+                    vc.landmark = landmark
+                }
             }
         }
     }
